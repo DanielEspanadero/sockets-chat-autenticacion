@@ -5,8 +5,9 @@ const url = (window.location.hostname.includes('localhost'))
     ? 'http://localhost:8080/api/auth/'
     : 'https://restserver-curso-fher.herokuapp.com/api/auth/';
 
-miFormulario.addEventListener('submit', ()=>{
-    
+miFormulario.addEventListener('submit', ev =>{
+    // PreventDefault evita que cuando hgamos submit se recargue el navegador web.
+    ev.preventDefault();
 })
 
 function onSignIn(googleUser) {
