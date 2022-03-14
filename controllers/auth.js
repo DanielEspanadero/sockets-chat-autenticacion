@@ -103,8 +103,11 @@ const googleSignin = async (req, res = response) => {
 
 const renovarToken = (req, res = response) => {
 
+    const {usuario} = req;
+    res.json({
+        usuario
+    })
 
-    
 }
 
 
