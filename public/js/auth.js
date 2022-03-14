@@ -5,9 +5,15 @@ const url = (window.location.hostname.includes('localhost'))
     ? 'http://localhost:8080/api/auth/'
     : 'https://restserver-curso-fher.herokuapp.com/api/auth/';
 
-miFormulario.addEventListener('submit', ev =>{
+miFormulario.addEventListener('submit', ev => {
     // PreventDefault evita que cuando hgamos submit se recargue el navegador web.
     ev.preventDefault();
+    const formData = {};
+    for (let el of miFormulario.elements) {
+        if (el.name.length > 0) {
+            formData[el.name] = el.value;
+        }
+    }
 })
 
 function onSignIn(googleUser) {
