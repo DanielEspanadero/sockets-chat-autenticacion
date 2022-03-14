@@ -12,9 +12,13 @@ miFormulario.addEventListener('submit', ev => {
     for (let el of miFormulario.elements) {
         if (el.name.length > 0) {
             formData[el.name] = el.value;
-        }
-        console.log(formData);
-    }
+        };
+    };
+    fetch(url + 'login', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'content-type': 'aplication/json' }
+    })
 })
 
 function onSignIn(googleUser) {
