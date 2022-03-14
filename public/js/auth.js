@@ -21,9 +21,11 @@ miFormulario.addEventListener('submit', ev => {
     })
     .then(resp => resp.json())
     .then(data => {
-
+        console.log(data);
     })
-    .catch()
+    .catch(err =>{
+        console.log(err);
+    });
 })
 
 function onSignIn(googleUser) {
