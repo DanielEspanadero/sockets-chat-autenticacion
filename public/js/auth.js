@@ -19,13 +19,16 @@ miFormulario.addEventListener('submit', ev => {
         body: JSON.stringify(formData),
         headers: { 'content-type': 'aplication/json' }
     })
-    .then(resp => resp.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(err =>{
-        console.log(err);
-    });
+        .then(resp => resp.json())
+        .then(({ msg, token }) => {
+            if (msg) {
+                return console.error(msg);
+            }
+            localstorage.setItem(token);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 })
 
 function onSignIn(googleUser) {
