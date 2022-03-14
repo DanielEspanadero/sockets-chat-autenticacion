@@ -24,7 +24,7 @@ miFormulario.addEventListener('submit', ev => {
             if (msg) {
                 return console.error(msg);
             }
-            localstorage.setItem(token);
+            localStorage.setItem(token);
         })
         .catch(err => {
             console.log(err);
