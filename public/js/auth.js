@@ -22,7 +22,7 @@ function onSignIn(googleUser) {
     })
         .then(resp => resp.json())
         .then(({ token }) => {
-            localStorage.setItem(token);
+            localStorage.setItem('token', token);
         })
         .catch(console.log);
 
