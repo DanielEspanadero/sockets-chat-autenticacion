@@ -19,6 +19,11 @@ miFormulario.addEventListener('submit', ev => {
         body: JSON.stringify(formData),
         headers: { 'content-type': 'aplication/json' }
     })
+    .then(resp => resp.json())
+    .then(data => {
+
+    })
+    .catch()
 })
 
 function onSignIn(googleUser) {
