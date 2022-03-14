@@ -1,4 +1,3 @@
-console.log(window.location.hostname.includes('localhost'))
 
 var url = (window.location.hostname.includes('localhost'))
     ? 'http://localhost:8080/api/auth/google'
@@ -22,7 +21,9 @@ function onSignIn(googleUser) {
         body: JSON.stringify(data)
     })
         .then(resp => resp.json())
-        .then(data => console.log('Nuestro server', data))
+        .then(({ token }) => {
+            console.log(token)
+        })
         .catch(console.log);
 
 }
