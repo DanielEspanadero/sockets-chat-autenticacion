@@ -29,7 +29,7 @@ miFormulario.addEventListener('submit', ev => {
         .catch(err => {
             console.log(err);
         });
-})
+});
 
 function onSignIn(googleUser) {
 
